@@ -9,6 +9,12 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def rejected
+
+  end
+
+  
+
   def grades
 
   end
