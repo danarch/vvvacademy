@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(function(){
+
+  $('#step').click(function(event) {
+
+    $('#solution-steps').append("<br><input class='form-control' placeholder='Solution Step' type='text'>");
+    event.stopPropagation();
+    return false
+  });
+});
