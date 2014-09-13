@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # StaticPages routes
   match '/about', to: 'static_pages#about', via: 'get'
   get '/submission', to: 'static_pages#submission'
-  get '/review', to: 'static_pages#submission'
+  get '/questionreview', to: 'static_pages#questionreview'
   get '/grades', to: 'static_pages#grades'
+  get '/quiz', to: 'static_pages#quiz'
   devise_for :users
 end

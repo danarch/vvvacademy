@@ -1,0 +1,40 @@
+.row
+  %h2.text-center Algebra - Section 2 Quiz
+
+
+.row
+  .col-md-2
+  .col-md-8
+    %ul.quiz-tabs.pagination
+      %li
+        %a(href="#") &laquo;
+      %li.active(data-num="1")
+        %a(href= "#") 1
+      - 19.times do |index|
+        %li{:"data-num" => index + 2}
+          %a(href= "#")= index + 2
+      %li
+        %a(href="#") &raquo;
+  .col-md-2
+.row
+  .col-md-3
+  .col-md-6.quiz-problem
+    %ul.list-group
+      %li.list-group-item.clearfix
+        %h5.text-center
+          Problem
+          %span.problem-number 1
+        %p.problem-text A 3 by 4 rectangle is inscribed in circle. What is the circumference of the circle?
+      %li.list-group-item.clearfix
+        %h5.text-center Solution Steps
+        %form
+          .form-group
+            Stuff from Matt
+      %li.list-group-item.clearfix
+        %h5.text-center Answer
+        Stuff from Matt
+    .pull-left
+      %a.btn.btn-danger(href="#" style="opacity: 0.9;") Reset Problem
+    .pull-right
+      %a.btn.btn-success(href="#") Submit
+  .col-md-3

@@ -16,4 +16,8 @@ class StaticPagesController < ApplicationController
   def reviews
 
   end
+
+  def quiz
+
+  end
 end
