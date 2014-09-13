@@ -1,0 +1,17 @@
+%br
+  %row
+    .col-md-4
+      %form{:role => "form"}
+        .form-group
+          %label{:for => "Problem"} Problem
+          %input.form-control{:placeholder => "Enter Problem", :type => "text"}/
+        .form-group#solution-steps
+          %label{:for => "solutionStep"}
+            Solution Steps
+            %a#step{href:"#"} (+)
+          %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+        .form-group
+          %label{:for => "solution"} Solution
+          %input.form-control{:type => "text", :placeholder => "Solution Step"}/
+
+        %button.btn.btn-default{:type => "submit"} Submit
