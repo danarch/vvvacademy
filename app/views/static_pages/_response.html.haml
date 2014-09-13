@@ -1,17 +1,17 @@
 %br
   %row
-     .col-md-4
+    .col-md-4
       %form{:role => "form"}
         .form-group
           %label{:for => "Problem"} Problem
-          %input.form-control{:placeholder => "Enter Problem", :type => "text"}/
+          %input.form-control{:type => "text", :value => "3x+4=10"}/
         .form-group#solution-steps
           %label{:for => "solutionStep"}
             Solution Steps
             %a#step{href:"#"} (+)
-          %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+          %input.form-control{:type => "text", :value => "There has to be some dummy data"}/
         .form-group
           %label{:for => "solution"} Solution
-          %input.form-control{:type => "text", :placeholder => "Solution Step"}/
+          %input.form-control{:type => "text", :value => "There has to be some dummy data"}/
 
         %button.btn.btn-default{:type => "submit"} Submit
