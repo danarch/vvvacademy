@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/questionreview', to: 'static_pages#questionreview'
   get '/grades', to: 'static_pages#grades'
   get '/quiz', to: 'static_pages#quiz'
+  get '/rejected', to: 'static_pages#rejected'
   devise_for :users
 end

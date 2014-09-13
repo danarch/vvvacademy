@@ -20,4 +20,8 @@ class StaticPagesController < ApplicationController
   def quiz
 
   end
+
+  def rejected
+    binding.pry
+  end
 end

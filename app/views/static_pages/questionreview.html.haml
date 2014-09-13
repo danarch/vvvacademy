@@ -48,15 +48,12 @@
           &nbsp
           &nbsp
           Uses only one variable
-        .well
+        %div
           %p.text-center Comments
-          %textarea.form-control(rows="5")
-  .col-md-1
-.row
-  .col-md-1
-  .col-md-5
-  .col-md-5
-    .pull-right
-      %a.btn.btn-success(href="#") Approve Question
-      %a.btn.btn-danger(href="#" style="opacity: 0.9;") Reject Question
+          %form(action="/rejected" method="GET")
+            %textarea.form-control(rows="3")
+            .pull-right(style="margin-top: 5%;")
+              %a.btn.btn-success(href="#" style="opacity: 0.9;") Approve Question
+            .pull-left(style="margin-top: 5%;")
+              %input.btn.btn-danger(type="submit" value="Reject Question")
   .col-md-1
