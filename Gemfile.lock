@@ -48,7 +48,7 @@ GEM
       html2haml
     erubis (2.7.0)
     execjs (2.2.1)
-    haml (4.0.5)
+    haml (4.1.0.beta.1)
       tilt
     haml-rails (0.5.3)
       actionpack (>= 4.0.1)

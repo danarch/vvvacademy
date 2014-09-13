@@ -4,4 +4,16 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def submission
+
+  end
+
+  def grades
+
+  end
+
+  def reviews
+
+  end
 end
