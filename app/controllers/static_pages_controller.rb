@@ -20,4 +20,7 @@ class StaticPagesController < ApplicationController
   def quiz
 
   end
+
+  def dashboard
+  end
 end
