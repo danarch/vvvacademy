@@ -1,0 +1,30 @@
+%br
+  %row
+    .col-md-8.col-md-offset-2
+      %form.form-horizontal
+        %fieldset
+          %legend Problem Submission
+          .form-group
+            %label.col-md-4.control-label{:for => "inputEmail"} Enter Problem
+            .col-md-8
+              %input.form-control{:placeholder => "Problem", :type => "text"}/
+          .form-group
+            %br
+            %label.col-md-4.control-label{:for => "Solution Steps"} Solution Steps
+            .col-md-8
+              %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+              %br
+              %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+              %br
+              %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+
+          .form-group
+            %br
+            %label.col-md-4.control-label{:for => "Solution"} Solution
+            .col-md-8
+              %input.form-control{:placeholder => "Solution", :type => "text"}/
+          .form-group.text-right
+            %br
+            .col-md-8.col-md-offset-4
+              %button.btn.btn-default Cancel
+              %button.btn.btn-primary{:type => "submit"} Submit
