@@ -13,6 +13,8 @@ class StaticPagesController < ApplicationController
 
   end
 
+  
+
   def grades
 
   end

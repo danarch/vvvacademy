@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get '/grades', to: 'static_pages#grades'
   get '/quiz', to: 'static_pages#quiz'
   devise_for :users
+
+
+  
 end
