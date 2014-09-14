@@ -14,11 +14,11 @@
     <div class="form-group">
       <select class="form-control" id="lesson">
         <option disabled selected>Lesson</option>
-        <option value="1">1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option>Lesson 1</option>
+        <option>Lesson 2</option>
+        <option>Lesson 3</option>
+        <option>Lesson 4</option>
+        <option value="1">Lesson 5</option>
       </select>
     </div>
   </fieldset>
@@ -26,13 +26,15 @@
 
 <br/><br/><br/><br/><br/>
 
-<h3>Quiz Grades</h3>
-<div class="row">
-	<div class="col-md-8">
-		<div id="container">
+<div id="show-this-stuff" style="display:none">
+	<h3>Quiz Grades</h3>
+	<div class="row">
+		<div class="col-md-8">
+			<div id="container">
+			</div>
 		</div>
 	</div>
-</div>
+
 
 <br/><br/>
 
@@ -61,6 +63,8 @@
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createTest">
   Create New Test
 </button>
+
+</div>
 
 <div class="modal fade" id="createTest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -117,9 +121,14 @@
   </div>
 </div>
 
-
-
 <script>
+$(document).ready(function() {
+	$('select').change(function() {
+		if ($('#subject').val()=="1" && $('#lesson').val()=="1") {
+			$('#show-this-stuff').show();
+		}
+	})
+});
 $(function () {
     $('#container').highcharts({
         chart: {

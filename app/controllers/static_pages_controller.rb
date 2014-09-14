@@ -38,4 +38,7 @@ class StaticPagesController < ApplicationController
   def petitions
   end
 
+  def parent
+  end
+
 end
