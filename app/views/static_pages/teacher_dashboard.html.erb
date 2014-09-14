@@ -8,11 +8,11 @@
         <option value="1">Algebra 1</option>
         <option>Algebra 2</option>
         <option>Geometry</option>
-        <option>Trigonometry</option>
+        <option>Statistic</option>
       </select>
     </div>
     <div class="form-group">
-      <select class="form-control" id="select">
+      <select class="form-control" id="lesson">
         <option disabled selected>Lesson</option>
         <option value="1">1</option>
         <option>2</option>
@@ -34,32 +34,24 @@
 	</div>
 </div>
 
-<br/><br/><br/>
+<br/><br/>
 
 <h3>Quiz Questions</h3>
+<form class="form-horizontal col-md-4">
+  <fieldset>
+    <div class="form-group">
+      <select class="form-control" id="subject">
+        <option selected>Top 3</option>
+        <option>Top 5</option>
+        <option>Top 10</option>
+        <option>Top 25</option>
+      </select>
+    </div>
+  </fieldset>
+</form>
 <div class="row">
 	<div class="col-md-8">
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Question</th>
-					<th>Solution</th>
-					<th>Author</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Solve for x: 3x + 10 = 0</td>
-					<td>x = - 10/3</td>
-					<td>James Brown</td>
-				</tr>
-				<tr>
-					<td>Solve for y: -5x + 2y = 4</td>
-					<td>y = 2.5x + 2</td>
-					<td>Mark Smith</td>
-				</tr>
-			</tbody>
-		</table>
+		<%= render 'static_pages/questions' %>
 	</div>
 </div>
 
@@ -67,7 +59,7 @@
 
 <!-- Button trigger modal -->
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createTest">
-  Create Test
+  Create New Test
 </button>
 
 <div class="modal fade" id="createTest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -78,15 +70,54 @@
         <h4 class="modal-title" id="myModalLabel">Create Test</h4>
       </div>
       <div class="modal-body">
-        ...
+				<form class="form-horizontal">
+				  <fieldset>
+				    <div class="form-group">
+				      <select class="form-control" id="quality" autofocus>
+				        <option disabled selected>Quality</option>
+				        <option value="1">Top 5</option>
+				        <option>Top 10</option>
+				        <option>Top 25</option>
+				        <option>Top 50</option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+				      <select class="form-control" id="level">
+				        <option disabled selected>Level</option>
+				        <option value="1">Class</option>
+				        <option>School</option>
+				        <option>District</option>
+				        <option>County</option>
+				        <option>State</option>
+				        <option>Country</option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+				      <select class="form-control" id="level">
+				        <option value="" disabled selected>Time</option>
+				        <option value="1">Past 3 lessons</option>
+				        <option>Past 5 lessons</option>
+				        <option>Past 1 week</option>
+				        <option>Past 2 weeks</option>
+				        <option>Past 4 weeks</option>
+				        <option>Cumulative</option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+							<input type="text" class="form-control" placeholder="Quantity">
+				    </div>
+				  </fieldset>
+				</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Create</button>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <script>
 $(function () {
