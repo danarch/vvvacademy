@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def reviews
+  def review
 
   end
 
@@ -34,4 +34,5 @@ class StaticPagesController < ApplicationController
 
   def petitions
   end
+
 end
