@@ -9,7 +9,6 @@ class StaticPagesController < ApplicationController
 
   end
 
-
   def grades
 
   end
@@ -27,9 +26,13 @@ class StaticPagesController < ApplicationController
   end
 
   def dashboard
+
   end
 
-  def teacherdashboard
+  def grade_quiz
+  end
+
+  def teacher_dashboard
   end
 
   def petitions
