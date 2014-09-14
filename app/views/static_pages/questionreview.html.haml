@@ -21,37 +21,42 @@
       .panel-heading
         Question Guidelines
       .panel-body
-        %p
+        .form-group
           %i.fa.fa-thumbs-o-up
+          &nbsp
           %i.fa.fa-thumbs-o-down
         %p
-          %input(type="checkbox")
-          %input(type="checkbox")
+          %input(type="radio" name="radio1")
+          &nbsp
+          %input(type="radio" name="radio1")
           &nbsp
           &nbsp
           Contains between 4-6 terms
         %p
-          %input(type="checkbox")
-          %input(type="checkbox")
+          %input(type="radio" name="radio2")
+          &nbsp
+          %input(type="radio" name="radio2")
           &nbsp
           &nbsp
           Only uses the addition/subtraction operands
         %p
-          %input(type="checkbox")
-          %input(type="checkbox")
+          %input(type="radio" name="radio3")
+          &nbsp
+          %input(type="radio" name="radio3")
           &nbsp
           &nbsp
           Uses integers between 0-20
         %p
-          %input(type="checkbox")
-          %input(type="checkbox")
+          %input(type="radio")
+          &nbsp
+          %input(type="radio")
           &nbsp
           &nbsp
           Uses only one variable
         %div
           %p.text-center Comments
           %form(action="/rejected" method="GET")
-            %textarea.form-control(rows="3")
+            %textarea.form-control(rows="3" name="comment")
             .pull-right(style="margin-top: 5%;")
               %a.btn.btn-success(href="#" style="opacity: 0.9;") Approve Question
             .pull-left(style="margin-top: 5%;")
