@@ -1,40 +1,8 @@
-:css
-  .teacherPetitionTitle {
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-  .teacherPetitionProblem {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .teacherProgress {
-   width: 117px;
-  }
-  .center {
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
-  .shorterCol {
-    width: 200px;
-  }
-  .submittedSol{
-    background-color: #f0ad4e;
-  }
-  .answerKey{
-    background-color: #66FF66;
-  }
-  .floatL {
-    float: left;
-  }
-  .floatR {
-    float: right;
-  }
-
 %div.center
 
-  %h1 Teacher Dashboard
+  %a{:href => "/teacher_dashboard"}
+    %h1 Teacher Dashboard
+  
 
   %table.table-hover
     %thead
@@ -56,7 +24,7 @@
 
   %div{:style => "height:25px;"}
 
-.panel.panel-primary.center#petition1
+.panel.panel-default.center#petition1
   .panel-heading
     %h3.panel-title Pending Petition #314159
     %span.floatR
@@ -69,17 +37,17 @@
     .col-md-1
     .col-md-5.quiz-problem
       %ul.list-group
-        %li.list-group-item.clearfix.submittedSol
+        %li.list-group-item.clearfix
           %h5.text-center Solution Submitted
           %p 1. 3x=10-4
-          %p 2. 3x=6
-          %p 3. x=2
+          %p 2. 3x=6.0
+          %p 3. x=2.0
         %li.list-group-item.clearfix.submittedSol
           %h5.text-center Answer
           x=2.0
     .col-md-5.quiz-problem
       %ul.list-group
-        %li.list-group-item.clearfix.answerKey
+        %li.list-group-item.clearfix
           %h5.text-center Answer Key
           %p 1. 3x=10-4
           %p 2. 3x=6
@@ -89,7 +57,7 @@
           x=2
 
 
-.panel.panel-primary.center#petition2
+.panel.panel-default.center#petition2
   .panel-heading
     %h3.panel-title Pending Petition #314160
     %span.floatR
@@ -97,26 +65,26 @@
       %a.btn.btn-danger.btn-xs{:href => "#"} Incorrect
   .panel-body
     .row
-    %h5.text-center.teacherPetitionProblem 3x = 10-4
+    %h5.text-center.teacherPetitionProblem 2x = 12-4
     .row
     .col-md-1
     .col-md-5.quiz-problem
       %ul.list-group
-        %li.list-group-item.clearfix.submittedSol
+        %li.list-group-item.clearfix
           %h5.text-center Solution Submitted
-          %p 1. 3x=10-4
-          %p 2. 3x=6
-          %p 3. x=2
+          %p 1. 2x=12-4
+          %p 2. 2x=8
+          %p 3. x=6
         %li.list-group-item.clearfix.submittedSol
           %h5.text-center Answer
-          x=2.0
+          x=6
     .col-md-5.quiz-problem
       %ul.list-group
-        %li.list-group-item.clearfix.answerKey
+        %li.list-group-item.clearfix
           %h5.text-center Answer Key
-          %p 1. 3x=10-4
-          %p 2. 3x=6
-          %p 3. x=2
+          %p 1. 2x=12-4
+          %p 2. 2x=8
+          %p 3. x=4
         %li.list-group-item.clearfix.answerKey
           %h5.text-center Answer
-          x=2
+          x=4
