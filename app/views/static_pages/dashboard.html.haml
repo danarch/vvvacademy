@@ -7,7 +7,7 @@
   .col-md-4
     %h5 Select Subject
     %select.form-control
-      %option Algebra
+      %option Algebra 1
       %option American History
       %option Physics
       %option Political Systems
@@ -17,15 +17,15 @@
 
 :javascript
   $(function () {
-    $('#container').highcharts({
+    $('#chart').highcharts({
         chart: {
             type: 'spline'
         },
         title: {
-            text: 'Grade Progress'
+            text: 'Algebra 1'
         },
         subtitle: {
-            text: 'Student grades'
+            text: 'Student grades vs. Class averages'
         },
         xAxis: {
             type: 'datetime',
@@ -35,15 +35,16 @@
         },
         yAxis: {
             title: {
-                text: 'Total Points'
+                text: 'Running Average'
             },
             min: 0,
+            max: 100,
             minorGridLineWidth: 0,
             gridLineWidth: 0,
             alternateGridColor: null,
             plotBands: [{ // Light air
-                from: 0.3,
-                to: 1.5,
+                from: 0,
+                to: 25,
                 color: 'rgba(68, 170, 213, 0.1)',
                 label: {
                     style: {
@@ -51,8 +52,8 @@
                     }
                 }
             }, { // Light breeze
-                from: 1.5,
-                to: 3.3,
+                from: 25,
+                to: 50,
                 color: 'rgba(0, 0, 0, 0)',
                 label: {
                     style: {
@@ -60,8 +61,8 @@
                     }
                 }
             }, { // Gentle breeze
-                from: 3.3,
-                to: 5.5,
+                from: 50,
+                to: 75,
                 color: 'rgba(68, 170, 213, 0.1)',
                 label: {
                     style: {
@@ -69,36 +70,9 @@
                     }
                 }
             }, { // Moderate breeze
-                from: 5.5,
-                to: 8,
+                from: 75,
+                to: 100,
                 color: 'rgba(0, 0, 0, 0)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
-                }
-            }, { // Fresh breeze
-                from: 8,
-                to: 11,
-                color: 'rgba(68, 170, 213, 0.1)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
-                }
-            }, { // Strong breeze
-                from: 11,
-                to: 14,
-                color: 'rgba(0, 0, 0, 0)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
-                }
-            }, { // High wind
-                from: 14,
-                to: 15,
-                color: 'rgba(68, 170, 213, 0.1)',
                 label: {
                     style: {
                         color: '#606060'
@@ -133,7 +107,7 @@
                 77, 79]
 
         }, {
-            name: 'Students Average',
+            name: 'My Average',
             data: [77, 97, 88, 65, 100, 96, 88, 79, 94, 85, 94, 87,
                 , 79, 75, 87, 97, 87, 84, 70, 71, 82, 99, 84,
                 82, 85, 94, 81, 80, 74, 81, 84, 71, 95, 95,
