@@ -30,15 +30,11 @@ class StaticPagesController < ApplicationController
   end
 
   def gradequiz
-
   end
 
   def teacherdashboard
   end
 
   def petitions
-  end
-
-  def gradequiz
   end
 end
