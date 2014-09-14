@@ -29,10 +29,10 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def gradequiz
+  def grade_quiz
   end
 
-  def teacherdashboard
+  def teacher_dashboard
   end
 
   def petitions
