@@ -1,50 +1,87 @@
+.page-header
+  %h1
+    Hunter Thompson
+    %small Student Dashboard
 
-%h2 Algebra
-
-.modal.fade.modal-submit-question(tabindex="-1" role="dialog" aria-hidden="true")
-  .modal-dialog
-    .modal-content
-      .modal-header Submit Problem
-      .modal-body
-        %form{:role => "form"}
-          .form-group
-            %label{:for => "Problem"} Problem
-            %input.form-control{:placeholder => "Enter Problem", :type => "text"}/
-          .form-group#solution-steps
-            %label{:for => "solutionStep"}
-              Solution Steps
-              %a#step{href:"#"} (+)
-            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
-          .form-group
-            %label{:for => "solution"} Solution
-            %input.form-control{:type => "text", :placeholder => "Solution Step"}/
-      .modal-footer
-        %button.btn.btn-primary{:type => "submit"} Submit
+%row
+  .col-md-4
+    %h5 Student Subjects
+    %select.form-control#subject
+      %option Select Subject
+      %option Political Systems
+      %option American History
+      %option Physics
+      %option{value: "1"} Algebra 1
+%br
+%br
+%br
+%br
+%br
+%br
+#show-this-stuff{:style => "display: none;"}
+  .row
+    .col-md-8
+      #chart{:style => "width: 50%; height: 400px"}
 
 
+:javascript
+
+  $(document).ready(function() {
+    $('select').change(function() {
+      if ($('#subject').val()=="1") {
+        $('#show-this-stuff').show();
+      }
+    })
+  });
 
 
-%table.col-md-12.table-hover
-  %thead
-    %tr
-      %th( width="75%")
-        %h4 Lesson
-      %th( width="25%")
-        %h4 Progress
-  %tbody
-    %tr
-      %td(width="75%") Solving for one variable using addition
-      %td(width="25%")
-        .btn.btn-default Review Grades
-    %tr
-      %td(width="75%") Solving for one variable using subtraction
-      %td(width="25%")
-        .btn.btn-default(href="#" style="opacity: 0.9;" data-toggle="modal" data-target=".modal-submit-question") Submit Question
-    %tr
-      %td.text-muted(width="75%") Solving for one variable using multiplication
-      %td(width="25%")
-        .btn.btn-default.disabled Not Available
-    %tr
-      %td.text-muted(width="75%") Solving for one variable using multiplication
-      %td(width="25%")
-        .btn.btn-default.disabled Not Available
+  $(function () {
+        $('#chart').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Quiz 1',
+                    'Quiz 2',
+                    'Quiz 3',
+                    'Quiz 4',
+                    'Quiz 5'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                max: 100,
+                title: {
+                    text: 'Grade (%)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} pts</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Class Average',
+                data: [84.5, 78.9, 90.1, 75.2, 80.2]
+
+            }, {
+                name: 'My Grades',
+                data: [98, 89, 100, 84, 93]
+
+            }]
+        });
+
+    });
