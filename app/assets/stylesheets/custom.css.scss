@@ -48,14 +48,12 @@ textarea {
   .submittedSol{
     background-color: #f0ad4e;
   }
-  .answerKey{
+  .answerKey, .studentSolRight{
     background-color: #66FF66;
   }
-  .floatL {
-    float: left;
-  }
-  .floatR {
-    float: right;
+  
+  .studentSolWrong {
+  	background-color: #d9534f;
   }
 
 
