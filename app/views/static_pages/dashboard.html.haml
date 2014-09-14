@@ -5,119 +5,70 @@
 
 %row
   .col-md-4
-    %h5 Select Subject
+    %h5 Student Subjects
     %select.form-control
-      %option Algebra 1
+      %option Select Subject
+      %option Political Systems
       %option American History
       %option Physics
-      %option Political Systems
-
-#chart{:style => "min-width: 310; height: 400px; margin: 0 auto"}
+      %option Algebra 1
+.yolo{:style => "display: none;"}
+  #chart{:style => "min-width: 310; height: 400px; margin: 0 auto"}
 
 
 :javascript
   $(function () {
-    $('#chart').highcharts({
-        chart: {
-            type: 'spline'
-        },
-        title: {
-            text: 'Algebra 1'
-        },
-        subtitle: {
-            text: 'Student grades vs. Class averages'
-        },
-        xAxis: {
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        yAxis: {
-            title: {
-                text: 'Running Average'
+        $('#chart').highcharts({
+            chart: {
+                type: 'column'
             },
-            min: 0,
-            max: 100,
-            minorGridLineWidth: 0,
-            gridLineWidth: 0,
-            alternateGridColor: null,
-            plotBands: [{ // Light air
-                from: 0,
-                to: 25,
-                color: 'rgba(68, 170, 213, 0.1)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Quiz 1',
+                    'Quiz 2',
+                    'Quiz 3',
+                    'Quiz 4',
+                    'Quiz 5'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                max: 100,
+                title: {
+                    text: 'Grade (%)'
                 }
-            }, { // Light breeze
-                from: 25,
-                to: 50,
-                color: 'rgba(0, 0, 0, 0)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
-            }, { // Gentle breeze
-                from: 50,
-                to: 75,
-                color: 'rgba(68, 170, 213, 0.1)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
-                }
-            }, { // Moderate breeze
-                from: 75,
-                to: 100,
-                color: 'rgba(0, 0, 0, 0)',
-                label: {
-                    style: {
-                        color: '#606060'
-                    }
-                }
-            }]
-        },
-        tooltip: {
-            valueSuffix: ' pts'
-        },
-        plotOptions: {
-            spline: {
-                lineWidth: 4,
-                states: {
-                    hover: {
-                        lineWidth: 5
-                    }
-                },
-                marker: {
-                    enabled: false
-                },
-                pointInterval: 604800000, // month
-                pointStart: Date.UTC(2012, 9, 6, 0, 0, 0)
-            }
-        },
-        series: [{
-            name: 'Class Averages',
-            data: [56, 67, 68, 52, 54, 67, 67, 41, 56, 74, 69, 71,
-                79, 79, 75, 67, 77, 77, 74, 70, 71, 58, 59, 74,
-                82, 85, 67, 81, 59, 74, 69, 84, 71, 78, 75,
-                71, 75, 81, 68, 88, 66, 80, 84, 66, 66, 44, 42,
-                77, 79]
+            },
+            series: [{
+                name: 'Class Average',
+                data: [84.5, 78.9, 90.1, 75.2, 80.2]
 
-        }, {
-            name: 'My Average',
-            data: [77, 97, 88, 65, 100, 96, 88, 79, 94, 85, 94, 87,
-                , 79, 75, 87, 97, 87, 84, 70, 71, 82, 99, 84,
-                82, 85, 94, 81, 80, 74, 81, 84, 71, 95, 95,
-                81, 75, 81, 68, 88, 66, 50, 84, 76, 86, 100, 98,
-                77, 79]
-        }],
-        navigation: {
-            menuItemStyle: {
-                fontSize: '10px'
-            }
-        }
-      });
+            }, {
+                name: 'My Grades',
+                data: [98, 89, 100, 84, 93]
+
+            }]
+        });
+
+        ('.swag').click( function() {
+
+
+
+        });
     });
