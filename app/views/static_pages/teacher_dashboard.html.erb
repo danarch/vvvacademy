@@ -1,0 +1,144 @@
+<h1>Teacher Dashboard</h1>
+<br/>
+<form class="form-horizontal col-md-4">
+  <fieldset>
+    <div class="form-group">
+      <select class="form-control" id="subject">
+        <option disabled selected>Subject</option>
+        <option value="1">Algebra 1</option>
+        <option>Algebra 2</option>
+        <option>Geometry</option>
+        <option>Trigonometry</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select class="form-control" id="select">
+        <option disabled selected>Lesson</option>
+        <option value="1">1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </fieldset>
+</form>
+
+<br/><br/><br/><br/><br/>
+
+<h3>Quiz Grades</h3>
+<div class="row">
+	<div class="col-md-8">
+		<div id="container">
+		</div>
+	</div>
+</div>
+
+<br/><br/><br/>
+
+<h3>Quiz Questions</h3>
+<div class="row">
+	<div class="col-md-8">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Question</th>
+					<th>Solution</th>
+					<th>Author</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Solve for x: 3x + 10 = 0</td>
+					<td>x = - 10/3</td>
+					<td>James Brown</td>
+				</tr>
+				<tr>
+					<td>Solve for y: -5x + 2y = 4</td>
+					<td>y = 2.5x + 2</td>
+					<td>Mark Smith</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<br/>
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createTest">
+  Create Test
+</button>
+
+<div class="modal fade" id="createTest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Test</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'Quiz 1',
+                'Quiz 2',
+                'Quiz 3',
+                'Quiz 4',
+                'Quiz 5'
+            ]
+        },
+        yAxis: {
+            min: 0,
+            max: 100,
+            title: {
+                text: 'Grade (%)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Average',
+            data: [84.5, 78.9, 90.1, 75.2, 80.2]
+
+        }, {
+            name: 'Highest',
+            data: [98, 89, 100, 84, 93]
+
+        }, {
+            name: 'Lowest',
+            data: [60, 45, 74, 40, 55]
+        }]
+    });
+});
+</script>
