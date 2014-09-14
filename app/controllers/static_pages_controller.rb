@@ -28,9 +28,15 @@ class StaticPagesController < ApplicationController
   end
 
   def rejected
-    binding.pry
+    #binding.pry
   end
 
   def dashboard
+  end
+
+  def teacherdashboard
+  end
+
+  def petitions
   end
 end
