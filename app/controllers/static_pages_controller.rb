@@ -37,4 +37,7 @@ class StaticPagesController < ApplicationController
 
   def petitions
   end
+
+  def view_grades    
+  end
 end
