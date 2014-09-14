@@ -1,6 +1,6 @@
 %div.center
 
-  %h1 Teacher Dashboard
+  %h1 My Grades
 
   %table.table-hover
     %thead
@@ -19,15 +19,61 @@
                 %li.divider
                 %li
                   %a{"data-toggle" => "tab", :href => ""} Geometry
+      %tr
+        %th.col-md-8.shorterCol
+          %h4 Select Lesson
+        %th.col-md-8
+          %ul.nav.nav-pills
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Solving for one variable using Addition 
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Solving for one variable using addition
+                %li.divider
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Solving for one variable using subtraction
 
   %div{:style => "height:25px;"}
 
-.panel.panel-default.center#petition1
+
+
+.panel.panel-default.center
   .panel-heading
-    %h3.panel-title Pending Petition #314159
-    %span.pull-right  
-      %a.btn.btn-success.btn-xs.petitionBtnAdjust{:href => "#"} Correct
-      %a.btn.btn-danger.btn-xs.petitionBtnAdjust{:href => "#"} Incorrect
+    %h3.panel-title.text-left 3x = 10-4
+    %a.btn.btn-default.pull-right.btn-xs.viewGradeBtnAdjust{:href => "#"} Petition      
+  .panel-body
+    .row
+    %h5.text-center.teacherPetitionProblem 2x = 12 - 4
+    .row
+    .col-md-1
+    .col-md-5.quiz-problem
+      %ul.list-group
+        %li.list-group-item.clearfix
+          %h5.text-center Solution Submitted
+          %p 1. 2x=12-4
+          %p 2. 2x=8
+          %p 3. x=4
+        %li.list-group-item.clearfix.studentSolRight
+          %h5.text-center Answer
+          x=4
+    .col-md-5.quiz-problem
+      %ul.list-group
+        %li.list-group-item.clearfix
+          %h5.text-center Answer Key
+          %p 1. 2x=12-4
+          %p 2. 2x=8
+          %p 3. x=4
+        %li.list-group-item.clearfix.answerKey
+          %h5.text-center Answer
+          x=4
+
+
+.panel.panel-default.center
+  .panel-heading
+    %h3.panel-title 3x = 10-4
+    %a.btn.btn-default.pull-right.btn-xs.viewGradeBtnAdjust{:href => "#"} Petition
   .panel-body
     .row
     %h5.text-center.teacherPetitionProblem 3x = 10-4
@@ -40,7 +86,7 @@
           %p 1. 3x=10-4
           %p 2. 3x=6
           %p 3. x=2
-        %li.list-group-item.clearfix.submittedSol
+        %li.list-group-item.clearfix.studentSolWrong
           %h5.text-center Answer
           x=2.0
     .col-md-5.quiz-problem
@@ -55,34 +101,4 @@
           x=2
 
 
-.panel.panel-default.center#petition2
-  .panel-heading
-    %h3.panel-title Pending Petition #314160
-    %span.pull-right  
-      %a.btn.btn-success.btn-xs.petitionBtnAdjust{:href => "#"} Correct
-      %a.btn.btn-danger.btn-xs.petitionBtnAdjust{:href => "#"} Incorrect
-  .panel-body
-    .row
-    %h5.text-center.teacherPetitionProblem 3x = 10-4
-    .row
-    .col-md-1
-    .col-md-5.quiz-problem
-      %ul.list-group
-        %li.list-group-item.clearfix
-          %h5.text-center Solution Submitted
-          %p 1. 3x=10-4
-          %p 2. 3x=6
-          %p 3. x=2
-        %li.list-group-item.clearfix.submittedSol
-          %h5.text-center Answer
-          x=2.0
-    .col-md-5.quiz-problem
-      %ul.list-group
-        %li.list-group-item.clearfix
-          %h5.text-center Answer Key
-          %p 1. 3x=10-4
-          %p 2. 3x=6
-          %p 3. x=2
-        %li.list-group-item.clearfix.answerKey
-          %h5.text-center Answer
-          x=2
+%div#grade_graph.graph

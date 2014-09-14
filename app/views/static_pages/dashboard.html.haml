@@ -1,4 +1,3 @@
-
 %h2 Algebra
 
 %table.table-hover
@@ -9,19 +8,21 @@
       %th.col-md-4
         %h4 Progress
   %tbody
-    %tr
+    %tr.studentLesson
       %td.col-md-8 Solving for one variable using addition
       %td.col-md-4
-        .btn.btn-default Review Grades
-    %tr
+        .btn.btn-success.studentProgress Review Grades
+    %tr.studentLesson
       %td.col-md-8 Solving for one variable using subtraction
       %td.col-md-4
-        .btn.btn-default Submit Question
-    %tr
+        .btn.btn-info.studentProgress Submit Questions
+          
+
+    %tr.studentLesson
       %td.col-md-8.text-muted Solving for one variable using multiplication
       %td.col-md-4
-        .btn.btn-default.disabled Not Available
-    %tr
+        .btn.btn-default.disabled.studentProgress Not Available
+    %tr.studentLesson
       %td.col-md-8.text-muted Solving for one variable using multiplication
       %td.col-md-4
-        .btn.btn-default.disabled Not Available
+        .btn.btn-default.disabled.studentProgress Not Available
