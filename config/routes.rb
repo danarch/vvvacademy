@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get '/rejected', to: 'static_pages#rejected'
   get '/questionreview', to: 'static_pages#questionreview'
   get '/grades', to: 'static_pages#grades'
-  get '/quiz', to: 'static_pages#quiz'
+  get '/gradequiz', to: 'static_pages#gradequiz'
   get '/dashboard', to: 'static_pages#dashboard'
   devise_for :users
 
 
-  
+
 end
