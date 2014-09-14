@@ -1,0 +1,122 @@
+:css
+  .teacherPetitionTitle {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .teacherPetitionProblem {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .teacherProgress {
+   width: 117px;
+  }
+  .center {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  .shorterCol {
+    width: 200px;
+  }
+  .submittedSol{
+    background-color: #f0ad4e;
+  }
+  .answerKey{
+    background-color: #66FF66;
+  }
+  .floatL {
+    float: left;
+  }
+  .floatR {
+    float: right;
+  }
+
+%div.center
+
+  %h1 Teacher Dashboard
+
+  %table.table-hover
+    %thead
+      %tr
+        %th.col-md-8.shorterCol
+          %h4 Select Subject
+        %th.col-md-5
+          %ul.nav.nav-pills
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Algebra
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Algebra
+                %li.divider
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Geometry
+
+  %div{:style => "height:25px;"}
+
+.panel.panel-primary.center#petition1
+  .panel-heading
+    %h3.panel-title Pending Petition #314159
+    %span.floatR
+      %a.btn.btn-success.btn-xs{:href => "#"} Correct
+      %a.btn.btn-danger.btn-xs{:href => "#"} Incorrect
+  .panel-body
+    .row
+    %h5.text-center.teacherPetitionProblem 3x = 10-4
+    .row
+    .col-md-1
+    .col-md-5.quiz-problem
+      %ul.list-group
+        %li.list-group-item.clearfix.submittedSol
+          %h5.text-center Solution Submitted
+          %p 1. 3x=10-4
+          %p 2. 3x=6
+          %p 3. x=2
+        %li.list-group-item.clearfix.submittedSol
+          %h5.text-center Answer
+          x=2.0
+    .col-md-5.quiz-problem
+      %ul.list-group
+        %li.list-group-item.clearfix.answerKey
+          %h5.text-center Answer Key
+          %p 1. 3x=10-4
+          %p 2. 3x=6
+          %p 3. x=2
+        %li.list-group-item.clearfix.answerKey
+          %h5.text-center Answer
+          x=2
+
+
+.panel.panel-primary.center#petition2
+  .panel-heading
+    %h3.panel-title Pending Petition #314160
+    %span.floatR
+      %a.btn.btn-success.btn-xs{:href => "#"} Correct
+      %a.btn.btn-danger.btn-xs{:href => "#"} Incorrect
+  .panel-body
+    .row
+    %h5.text-center.teacherPetitionProblem 3x = 10-4
+    .row
+    .col-md-1
+    .col-md-5.quiz-problem
+      %ul.list-group
+        %li.list-group-item.clearfix.submittedSol
+          %h5.text-center Solution Submitted
+          %p 1. 3x=10-4
+          %p 2. 3x=6
+          %p 3. x=2
+        %li.list-group-item.clearfix.submittedSol
+          %h5.text-center Answer
+          x=2.0
+    .col-md-5.quiz-problem
+      %ul.list-group
+        %li.list-group-item.clearfix.answerKey
+          %h5.text-center Answer Key
+          %p 1. 3x=10-4
+          %p 2. 3x=6
+          %p 3. x=2
+        %li.list-group-item.clearfix.answerKey
+          %h5.text-center Answer
+          x=2
