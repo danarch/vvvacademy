@@ -56,8 +56,9 @@
         .comments.hidden
           %p.text-center Comments
           %form(action="/rejected" method="GET")
-            %textarea.form-control(rows="3" name="comment" placeholder="Enter an explanation")
+            %textarea.form-control(rows="3" name="comment" placeholder="Enter an explanation" required="required")
             .hidden.reject-question(style="margin-top: 5%;")
               %input.btn.btn-danger.center-block(type="submit" value="Reject Question")
         %a.btn.btn-success.hidden.accept-question.center-block(style="margin-top: 5%;" href="#") Approve Question
   .col-md-1
+

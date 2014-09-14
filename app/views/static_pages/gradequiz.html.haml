@@ -1,7 +1,15 @@
 .row
-  %h2.text-center Algebra - Section 2 Quiz
+  %h2 Grade Quiz
 
-
+.modal.fade.bs-example-modal-sm(tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true")
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header Comments
+      .modal-body
+        %form
+          %textarea.form-control(rows="3")
+      .modal-footer
+        .btn.btn-primary(data-dismiss="modal") Save
 .row
   .col-md-2
   .col-md-8
@@ -17,8 +25,8 @@
         %a(href="#") &raquo;
   .col-md-2
 .row
-  .col-md-3
-  .col-md-6.quiz-problem
+  .col-md-2
+  .col-md-4.quiz-problem
     %ul.list-group
       %li.list-group-item.clearfix
         %h5.text-center
@@ -34,7 +42,22 @@
         %h5.text-center Answer
         Stuff from Matt
     .pull-left
-      %a.btn.btn-danger(href="#" style="opacity: 0.9;") Reset Problem
+      %a.btn.btn-danger(href="#" style="opacity: 0.9;" data-toggle="modal" data-target=".bs-example-modal-sm") Incorrect
     .pull-right
-      %a.btn.btn-success(href="#") Submit
-  .col-md-3
+      %a.btn.btn-success(href="#") Correct
+  .col-md-4.quiz-problem
+    %ul.list-group
+      %li.list-group-item.clearfix
+        %h5.text-center
+          Problem
+          %span.problem-number 1
+        %p.problem-text 3x+4=10
+      %li.list-group-item.clearfix
+        %h5.text-center Solution Steps
+        %p 1. 3x=10-4
+        %p 2. 3x=6
+        %p 3. x=2
+      %li.list-group-item.clearfix
+        %h5.text-center Answer
+        x=2
+  .col-md-2
