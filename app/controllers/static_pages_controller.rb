@@ -28,4 +28,10 @@ class StaticPagesController < ApplicationController
 
   def dashboard
   end
+
+  def teacherdashboard
+  end
+
+  def petitions
+  end
 end
