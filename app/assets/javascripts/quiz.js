@@ -50,14 +50,5 @@ $(function() {
         $('.reject-question').addClass("hidden");
       }
     }
-
-//     {
-//      if($('.thumbs-up:radio:checked') == 4) {
-//        alert("all thumbs up");
-//      }
-//      if($('.thumbs-down:radio:checked') > 0) {
-//        alert("all thumbs down");
-//      }
-//    }
   });
 });
