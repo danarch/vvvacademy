@@ -1,24 +1,11 @@
-:css
-  .teacherLesson {
-   height: 60px;
-  }
-  .teacherProgress {
-   width: 117px;
-  }
-  .center {
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
-  .shorterCol {
-    width: 200px;
-  }
+
 %div.center
 
   %h1 Teacher Dashboard
 
-  %table.table-hover
+  %div{:style => "height:25px;"}
+
+  %table.table-hover    
     %thead
       %tr
         %th.col-md-8.shorterCol
@@ -31,35 +18,27 @@
                 %span.caret
               %ul.dropdown-menu
                 %li
-                  = link_to "Algebra", quiz_path
+                  %a{"data-toggle" => "tab", :href => ""} Algebra
                 %li.divider
                 %li
                   %a{"data-toggle" => "tab", :href => ""} Geometry
-
-  %div{:style => "height:25px;"}
-
-
-  %table.table-hover
-    %thead
       %tr
+        %th.col-md-8.shorterCol
+          %h4 Select Lesson
         %th.col-md-8
-          %h4 Lesson
-        %th.col-md-4
-          %h4 Progress
-    %tbody
-      %tr.teacherLesson
-        %td.col-md-8 Solving for one variable using addition
-        %td.col-md-4
-          .btn.btn-success.teacherProgress Completed
-      %tr.teacherLesson
-        %td.col-md-8 Solving for one variable using subtraction
-        %td.col-md-4
-          .btn.btn-primary.teacherProgress In Progress
-      %tr.teacherLesson
-        %td.col-md-8 Solving for one variable using multiplication
-        %td.col-md-4
-          .btn.btn-default.teacherProgress Assign Later
-      %tr.teacherLesson
-        %td.col-md-8 Solving for one variable using multiplication
-        %td.col-md-4
-          .btn.btn-default.teacherProgress Assign Later
+          %ul.nav.nav-pills
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Solving for one variable using Addition 
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a#complete{"data-toggle" => "tab", :href => ""} Solving for one variable using addition
+                %li.divider
+                %li
+                  %a#progress{"data-toggle" => "tab", :href => ""} Solving for one variable using subtraction
+        %th.btn.btn-success.btn-sm.teacherProgress Completed
+
+  %div.completedQuestionBank
+
+  %div.inProgressQuestionBank

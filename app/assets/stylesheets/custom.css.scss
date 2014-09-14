@@ -25,6 +25,22 @@ textarea {
 
 /* custom css - chuya */
 
+  .teacherLesson {
+   height: 40px;
+  }
+  .teacherProgress {
+   width: 117px;
+  }
+  .center {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  .shorterCol {
+    width: 200px;
+  }
+
  .teacherPetitionTitle {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -36,12 +52,7 @@ textarea {
   .teacherProgress {
    width: 117px;
   }
-  .center {
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
+
   .shorterCol {
     width: 200px;
   }
@@ -75,3 +86,18 @@ textarea {
     margin-left: auto; 
     margin-right: auto;
   }
+
+  .completedQuestionBank{
+  	margin-top: 25px;
+  	height: 80px;
+  	background-color: #d9534f;
+  	display: none;
+  }
+
+.inProgressQuestionBank{
+	margin-top: 25px;
+	height: 80px;
+	background-color: #66FF66;
+	display: none;
+}
+
