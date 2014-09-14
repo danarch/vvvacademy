@@ -6,17 +6,35 @@
 %row
   .col-md-4
     %h5 Student Subjects
-    %select.form-control
+    %select.form-control#subject
       %option Select Subject
       %option Political Systems
       %option American History
       %option Physics
-      %option Algebra 1
-.yolo{:style => "display: none;"}
-  #chart{:style => "min-width: 310; height: 400px; margin: 0 auto"}
+      %option{value: "1"} Algebra 1
+%br
+%br
+%br
+%br
+%br
+%br
+#show-this-stuff{:style => "display: none;"}
+  .row
+    .col-md-8
+      #chart{:style => "width: 50%; height: 400px"}
 
 
 :javascript
+
+  $(document).ready(function() {
+    $('select').change(function() {
+      if ($('#subject').val()=="1") {
+        $('#show-this-stuff').show();
+      }
+    })
+  });
+
+
   $(function () {
         $('#chart').highcharts({
             chart: {
@@ -44,7 +62,7 @@
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y:.1f} pts</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -66,9 +84,4 @@
             }]
         });
 
-        ('.swag').click( function() {
-
-
-
-        });
     });
