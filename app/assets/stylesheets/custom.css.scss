@@ -20,3 +20,48 @@ textarea {
 #logo {
 	margin-top: 5px;
 }
+
+
+
+/* custom css - chuya */
+
+ .teacherPetitionTitle {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .teacherPetitionProblem {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .teacherProgress {
+   width: 117px;
+  }
+  .center {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  .shorterCol {
+    width: 200px;
+  }
+  .submittedSol{
+    background-color: #f0ad4e;
+  }
+  .answerKey{
+    background-color: #66FF66;
+  }
+  .floatL {
+    float: left;
+  }
+  .floatR {
+    float: right;
+  }
+
+
+  .studentLesson {
+   height: 60px;
+  }
+  .studentProgress {
+     width: 152px;
+    }
