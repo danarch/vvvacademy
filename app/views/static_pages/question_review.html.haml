@@ -1,0 +1,64 @@
+.row
+  %h2.text-center Question Review
+.row
+  .col-md-1
+  .col-md-5.quiz-problem
+    %ul.list-group
+      %li.list-group-item.clearfix
+        %h5.text-center
+          Problem
+        %p.problem-text 3x+4=10
+      %li.list-group-item.clearfix
+        %h5.text-center Solution Steps
+        %p 1. 3x=10-4
+        %p 2. 3x=6
+        %p 3. x=2
+      %li.list-group-item.clearfix
+        %h5.text-center Answer
+        x=2
+  .col-md-5
+    .panel.panel-default
+      .panel-heading
+        Question Guidelines
+      .panel-body
+        .form-group
+          %i.fa.fa-thumbs-o-up
+          &nbsp
+          %i.fa.fa-thumbs-o-down
+        %p.checkboxes
+          %input.thumbs-up(type="radio" name="radio1")
+          &nbsp
+          %input.thumbs-down(type="radio" name="radio1")
+          &nbsp
+          &nbsp
+          Contains between 4-6 terms
+        %p.checkboxes
+          %input.thumbs-up(type="radio" name="radio2")
+          &nbsp
+          %input.thumbs-down(type="radio" name="radio2")
+          &nbsp
+          &nbsp
+          Only uses the addition/subtraction operands
+        %p.checkboxes
+          %input.thumbs-up(type="radio" name="radio3")
+          &nbsp
+          %input.thumbs-down(type="radio" name="radio3")
+          &nbsp
+          &nbsp
+          Uses integers between 0-20
+        %p.checkboxes
+          %input.thumbs-up(type="radio" name="radio4")
+          &nbsp
+          %input.thumbs-down(type="radio" name="radio4")
+          &nbsp
+          &nbsp
+          Uses only one variable
+        .comments.hidden
+          %p.text-center Comments
+          %form(action="/rejected" method="GET")
+            %textarea.form-control(rows="3" name="comment" placeholder="Enter an explanation" required="required")
+            .hidden.reject-question(style="margin-top: 5%;")
+              %input.btn.btn-danger.center-block(type="submit" value="Reject Question")
+        %a.btn.btn-success.hidden.accept-question.center-block(style="margin-top: 5%;" href="#") Approve Question
+  .col-md-1
+
