@@ -1,7 +1,10 @@
+%h1.text-center Rejection Notice
 %row
-  .col-md-6
+  %br
+  .col-md-4.col-md-offset-2
     = render 'response'
-  .col-md-6
+  .col-md-4
     %h3 Peer Review Notes
-
-    
+    = @comment
+    %hr
+      %ul
