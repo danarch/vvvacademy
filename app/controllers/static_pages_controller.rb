@@ -9,12 +9,6 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def rejected
-
-  end
-
-  
-
   def grades
 
   end
@@ -28,13 +22,17 @@ class StaticPagesController < ApplicationController
   end
 
   def rejected
-    #binding.pry
+    @comment = params[:comment] ? params[:comment] : "There was no comment"
   end
 
   def dashboard
+
   end
 
-  def teacherdashboard
+  def grade_quiz
+  end
+
+  def teacher_dashboard
   end
 
   def petitions

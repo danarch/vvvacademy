@@ -1,2 +1,10 @@
-= render 'response'
-  
+%h1.text-center Rejection Notice
+%row
+  %br
+  .col-md-4.col-md-offset-2
+    = render 'response'
+  .col-md-4
+    %h3 Peer Review Notes
+    = @comment
+    %hr
+      %ul

@@ -33,4 +33,22 @@ $(function() {
       $(".problem-number").html(number)
     }, 400);
   });
+
+  $('input:radio').click(function() {
+    if($('.thumbs-down:radio:checked').length > 0) {
+      $('.comments').removeClass("hidden");
+    } else {
+      $('.comments').addClass("hidden");
+    }
+
+    if ($(".checkboxes").children("input:radio:checked").size() == 4) {
+      if ($("input:radio:checked.thumbs-down").size() > 0) {
+        $('.reject-question').removeClass("hidden");
+        $('.accept-question').addClass("hidden");
+      } else {
+        $('.accept-question').removeClass("hidden");
+        $('.reject-question').addClass("hidden");
+      }
+    }
+  });
 });
