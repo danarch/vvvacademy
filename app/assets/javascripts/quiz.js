@@ -25,14 +25,29 @@ $(function() {
   $(".quiz-tabs li").click(function() {
     var number = $(this).data("num");
 
+
     $(this).siblings().removeClass("active");
     $(this).addClass("active");
+
     $(".quiz-problem").fadeToggle().fadeToggle();
+
     setTimeout(function() {
       $(".problem-text").html(exampleQuestions[number]);
-      $(".problem-number").html(number)
+      $(".problem-number").html(number);
+      $("#solution-steps").children().remove();
+
+      $(Array(3)).each(function() {
+        $('#solution-steps').append("<br><input class='form-control' placeholder='Solution Step' type='text'>");
+      });
+
     }, 400);
+
+
+
   });
+
+
+
 
   $('input:radio').click(function() {
     if($('.thumbs-down:radio:checked').length > 0) {
