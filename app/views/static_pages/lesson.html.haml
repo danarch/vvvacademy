@@ -17,6 +17,8 @@
       %option(value="4") Lesson 4
       %option(value="5") Lesson 5
 %br
+%br
+%br
 
 .modal.fade.modal-submit-question(tabindex="-1" role="dialog" aria-hidden="true")
   .modal-dialog
@@ -103,6 +105,12 @@
         %a.btn.btn-success.hidden.accept-question.center-block(style="margin-top: 5%;" href="#") Approve Question
 
 //#TODO Add Lesson Content
+%br
+%br
+.row
+  #content(style="display:none")
+    = render 'lesson_content'
+%br
 
 
 .row
@@ -110,12 +118,18 @@
 .btn.btn-default.disabled#submit( data-toggle="modal" data-target=".modal-submit-question") Submit Question
 .btn.btn-default.disabled#review( data-toggle="modal" data-target=".modal-review-question") Review Question
 %a.btn.btn-default.disabled#quiz(href= "/quiz") Take Quiz
-%a.btn.btn-default.disabled#grade Grade Quiz
-%a.btn.btn-default.disabled#grades Review Grades
+%a.btn.btn-default.disabled#grade(href= '/grade_quiz') Grade Quiz
+%a.btn.btn-default.disabled#grades(href= '/dashboard') Review Grades
 
 
 :javascript
   $(function() {
+    $('select').change(function() {
+      if ($('#subject').val()=="1") {
+        $('#content').show();
+      };
+    });
+
     $('select').change(function() {
       if ($('#lesson').val()=="5") {
         $('#submit, #review, #quiz, #grade, #grades').addClass('disabled');
