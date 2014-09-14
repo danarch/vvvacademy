@@ -1,50 +1,149 @@
+.page-header
+  %h1
+    Hunter Thompson
+    %small Student Dashboard
 
-%h2 Algebra
+%row
+  .col-md-4
+    %h5 Select Subject
+    %select.form-control
+      %option Algebra
+      %option American History
+      %option Physics
+      %option Political Systems
 
-.modal.fade.modal-submit-question(tabindex="-1" role="dialog" aria-hidden="true")
-  .modal-dialog
-    .modal-content
-      .modal-header Submit Problem
-      .modal-body
-        %form{:role => "form"}
-          .form-group
-            %label{:for => "Problem"} Problem
-            %input.form-control{:placeholder => "Enter Problem", :type => "text"}/
-          .form-group#solution-steps
-            %label{:for => "solutionStep"}
-              Solution Steps
-              %a#step{href:"#"} (+)
-            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
-          .form-group
-            %label{:for => "solution"} Solution
-            %input.form-control{:type => "text", :placeholder => "Solution Step"}/
-      .modal-footer
-        %button.btn.btn-primary{:type => "submit"} Submit
+#chart{:style => "min-width: 310; height: 400px; margin: 0 auto"}
 
 
+:javascript
+  $(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Grade Progress'
+        },
+        subtitle: {
+            text: 'Student grades'
+        },
+        xAxis: {
+            type: 'datetime',
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Total Points'
+            },
+            min: 0,
+            minorGridLineWidth: 0,
+            gridLineWidth: 0,
+            alternateGridColor: null,
+            plotBands: [{ // Light air
+                from: 0.3,
+                to: 1.5,
+                color: 'rgba(68, 170, 213, 0.1)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, { // Light breeze
+                from: 1.5,
+                to: 3.3,
+                color: 'rgba(0, 0, 0, 0)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, { // Gentle breeze
+                from: 3.3,
+                to: 5.5,
+                color: 'rgba(68, 170, 213, 0.1)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, { // Moderate breeze
+                from: 5.5,
+                to: 8,
+                color: 'rgba(0, 0, 0, 0)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, { // Fresh breeze
+                from: 8,
+                to: 11,
+                color: 'rgba(68, 170, 213, 0.1)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, { // Strong breeze
+                from: 11,
+                to: 14,
+                color: 'rgba(0, 0, 0, 0)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, { // High wind
+                from: 14,
+                to: 15,
+                color: 'rgba(68, 170, 213, 0.1)',
+                label: {
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' pts'
+        },
+        plotOptions: {
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                },
+                pointInterval: 604800000, // month
+                pointStart: Date.UTC(2012, 9, 6, 0, 0, 0)
+            }
+        },
+        series: [{
+            name: 'Class Averages',
+            data: [56, 67, 68, 52, 54, 67, 67, 41, 56, 74, 69, 71,
+                79, 79, 75, 67, 77, 77, 74, 70, 71, 58, 59, 74,
+                82, 85, 67, 81, 59, 74, 69, 84, 71, 78, 75,
+                71, 75, 81, 68, 88, 66, 80, 84, 66, 66, 44, 42,
+                77, 79]
 
-
-%table.col-md-12.table-hover
-  %thead
-    %tr
-      %th( width="75%")
-        %h4 Lesson
-      %th( width="25%")
-        %h4 Progress
-  %tbody
-    %tr
-      %td(width="75%") Solving for one variable using addition
-      %td(width="25%")
-        .btn.btn-default Review Grades
-    %tr
-      %td(width="75%") Solving for one variable using subtraction
-      %td(width="25%")
-        .btn.btn-default(href="#" style="opacity: 0.9;" data-toggle="modal" data-target=".modal-submit-question") Submit Question
-    %tr
-      %td.text-muted(width="75%") Solving for one variable using multiplication
-      %td(width="25%")
-        .btn.btn-default.disabled Not Available
-    %tr
-      %td.text-muted(width="75%") Solving for one variable using multiplication
-      %td(width="25%")
-        .btn.btn-default.disabled Not Available
+        }, {
+            name: 'Students Average',
+            data: [77, 97, 88, 65, 100, 96, 88, 79, 94, 85, 94, 87,
+                , 79, 75, 87, 97, 87, 84, 70, 71, 82, 99, 84,
+                82, 85, 94, 81, 80, 74, 81, 84, 71, 95, 95,
+                81, 75, 81, 68, 88, 66, 50, 84, 76, 86, 100, 98,
+                77, 79]
+        }],
+        navigation: {
+            menuItemStyle: {
+                fontSize: '10px'
+            }
+        }
+      });
+    });
