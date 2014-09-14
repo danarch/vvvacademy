@@ -15,8 +15,39 @@ textarea {
   resize: vertical;
 }
 
+.inline {
+	display: inline;
+}
 
 /* Navbar */
 #logo {
 	margin-top: 5px;
+}
+
+
+/* parent css */
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.divider {
+	height: 25px;
+}
+
+.progressMargin {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.problem {
+	color: #000099;
+	font-style: italic;
+}
+
+.image {
+	margin-top: 20px;
+	margin-left: 180px;
 }

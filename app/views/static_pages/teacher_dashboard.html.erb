@@ -1,0 +1,184 @@
+<h1>Teacher Dashboard</h1>
+<br/>
+<form class="form-horizontal col-md-4">
+  <fieldset>
+    <div class="form-group">
+      <select class="form-control" id="subject">
+        <option disabled selected>Subject</option>
+        <option value="1">Algebra 1</option>
+        <option>Algebra 2</option>
+        <option>Geometry</option>
+        <option>Statistic</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select class="form-control" id="lesson">
+        <option disabled selected>Lesson</option>
+        <option>Lesson 1</option>
+        <option>Lesson 2</option>
+        <option>Lesson 3</option>
+        <option>Lesson 4</option>
+        <option value="1">Lesson 5</option>
+      </select>
+    </div>
+  </fieldset>
+</form>
+
+<br/><br/><br/><br/><br/>
+
+<div id="show-this-stuff" style="display:none">
+	<h3>Quiz Grades</h3>
+	<div class="row">
+		<div class="col-md-8">
+			<div id="container">
+			</div>
+		</div>
+	</div>
+
+
+<br/><br/>
+
+<h3>Quiz Questions</h3>
+<form class="form-horizontal col-md-4">
+  <fieldset>
+    <div class="form-group">
+      <select class="form-control" id="subject">
+        <option selected>Top 3</option>
+        <option>Top 5</option>
+        <option>Top 10</option>
+        <option>Top 25</option>
+      </select>
+    </div>
+  </fieldset>
+</form>
+<div class="row">
+	<div class="col-md-8">
+		<%= render 'static_pages/questions' %>
+	</div>
+</div>
+
+<br/>
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createTest" style="margin-bottom:75px">
+  Create New Test
+</button>
+
+</div>
+
+<div class="modal fade" id="createTest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Test</h4>
+      </div>
+      <div class="modal-body">
+				<form class="form-horizontal">
+				  <fieldset>
+				    <div class="form-group">
+				      <select class="form-control" id="quality" autofocus>
+				        <option disabled selected>Quality</option>
+				        <option value="1">Top 5</option>
+				        <option>Top 10</option>
+				        <option>Top 25</option>
+				        <option>Top 50</option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+				      <select class="form-control" id="level">
+				        <option disabled selected>Level</option>
+				        <option value="1">Class</option>
+				        <option>School</option>
+				        <option>District</option>
+				        <option>County</option>
+				        <option>State</option>
+				        <option>Country</option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+				      <select class="form-control" id="level">
+				        <option value="" disabled selected>Time</option>
+				        <option value="1">Past 3 lessons</option>
+				        <option>Past 5 lessons</option>
+				        <option>Past 1 week</option>
+				        <option>Past 2 weeks</option>
+				        <option>Past 4 weeks</option>
+				        <option>Cumulative</option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+							<input type="text" class="form-control" placeholder="Quantity">
+				    </div>
+				  </fieldset>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$('select').change(function() {
+		if ($('#subject').val()=="1" && $('#lesson').val()=="1") {
+			$('#show-this-stuff').show();
+		}
+	})
+});
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'Quiz 1',
+                'Quiz 2',
+                'Quiz 3',
+                'Quiz 4',
+                'Quiz 5'
+            ]
+        },
+        yAxis: {
+            min: 0,
+            max: 100,
+            title: {
+                text: 'Grade (%)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} pts</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Average',
+            data: [84.5, 78.9, 90.1, 75.2, 80.2]
+
+        }, {
+            name: 'Highest',
+            data: [98, 89, 100, 84, 93]
+
+        }, {
+            name: 'Lowest',
+            data: [60, 45, 74, 40, 55]
+        }]
+    });
+});
+</script>

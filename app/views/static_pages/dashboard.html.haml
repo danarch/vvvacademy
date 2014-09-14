@@ -1,0 +1,88 @@
+
+.page-header
+  %h1
+    Hunter Thompson
+    %small Student Dashboard
+
+%row
+  .col-md-4
+    %h5 Student Subjects
+    %select.form-control#subject
+      %option Select Subject
+      %option Political Systems
+      %option American History
+      %option Physics
+      %option{value: "1"} Algebra 1
+%br
+%br
+%br
+%br
+%br
+%br
+#show-this-stuff{:style => "display: none;"}
+  .row
+    .col-md-8
+      #chart{:style => "width: 50%; height: 400px"}
+
+
+:javascript
+
+  $(document).ready(function() {
+    $('select').change(function() {
+      if ($('#subject').val()=="1") {
+        $('#show-this-stuff').show();
+      }
+    })
+  });
+
+
+  $(function () {
+        $('#chart').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Quiz 1',
+                    'Quiz 2',
+                    'Quiz 3',
+                    'Quiz 4',
+                    'Quiz 5'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                max: 100,
+                title: {
+                    text: 'Grade (%)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} pts</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Class Average',
+                data: [84.5, 78.9, 90.1, 75.2, 80.2]
+
+            }, {
+                name: 'My Grades',
+                data: [98, 89, 100, 84, 93]
+
+            }]
+        });
+
+    });
