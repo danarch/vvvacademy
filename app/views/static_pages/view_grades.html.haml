@@ -1,6 +1,6 @@
 %div.center
 
-  %h1 Teacher Dashboard
+  %h1 My Grades
 
   %table.table-hover
     %thead
@@ -19,15 +19,37 @@
                 %li.divider
                 %li
                   %a{"data-toggle" => "tab", :href => ""} Geometry
+      %tr
+        %th.col-md-8.shorterCol
+          %h4 Select Lesson
+        %th.col-md-8
+          %ul.nav.nav-pills
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Solving for one variable using Addition 
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Solving for one variable using addition
+                %li.divider
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Solving for one variable using subtraction
+                %li.divider
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Solving for one variable using multiplication
+                %li.divider
+                %li
+                  %a{"data-toggle" => "tab", :href => ""} Solving for one variable using division
+
 
   %div{:style => "height:25px;"}
 
+
+
 .panel.panel-primary.center#petition1
   .panel-heading
-    %h3.panel-title Pending Petition #314159
-    %span.pull-right  
-      %a.btn.btn-success.btn-xs.petitionBtnAdjust{:href => "#"} Correct
-      %a.btn.btn-danger.btn-xs.petitionBtnAdjust{:href => "#"} Incorrect
+    %h3.panel-title.text-left 3x = 10-4
+    %a.btn.btn-default.pull-right.btn-xs.viewGradeBtnAdjust{:href => "#"} Petition      
   .panel-body
     .row
     %h5.text-center.teacherPetitionProblem 3x = 10-4
@@ -58,9 +80,7 @@
 .panel.panel-primary.center#petition2
   .panel-heading
     %h3.panel-title Pending Petition #314160
-    %span.pull-right  
-      %a.btn.btn-success.btn-xs.petitionBtnAdjust{:href => "#"} Correct
-      %a.btn.btn-danger.btn-xs.petitionBtnAdjust{:href => "#"} Incorrect
+    %a.btn.btn-default.pull-right.btn-xs.viewGradeBtnAdjust{:href => "#"} Petition
   .panel-body
     .row
     %h5.text-center.teacherPetitionProblem 3x = 10-4
