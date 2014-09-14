@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def review
+  def question_review
 
   end
 
