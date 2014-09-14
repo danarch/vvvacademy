@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def reviews
+  def review
 
   end
 

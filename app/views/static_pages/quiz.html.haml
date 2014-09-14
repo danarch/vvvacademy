@@ -30,19 +30,13 @@
         Solution Steps
         %a#step{:href => "#"}
           (+)
-        %form
+        %form#partial
           .form-group#solution-steps
-            %br
-            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
-            %br
-            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
-            %br
-            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
-
+            =render 'steps'
       %li.list-group-item.clearfix
         %h5.text-center Answer
         %form
-          .form-group
+          .form-group#answer
             %br
             %input.form-control{:placeholder => "Solution Answer", :type => "text"}/
 
