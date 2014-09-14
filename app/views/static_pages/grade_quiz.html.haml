@@ -18,7 +18,7 @@
         %a(href="#") &laquo;
       %li.active(data-num="1")
         %a(href= "#") 1
-      - 19.times do |index|
+      - 16.times do |index|
         %li{:"data-num" => index + 2}
           %a(href= "#")= index + 2
       %li
@@ -35,12 +35,10 @@
         %p.problem-text A 3 by 4 rectangle is inscribed in circle. What is the circumference of the circle?
       %li.list-group-item.clearfix
         %h5.text-center Solution Steps
-        %form
-          .form-group
-            Stuff from Matt
+        %p.well.well-sm studentsolution
       %li.list-group-item.clearfix
         %h5.text-center Answer
-        Stuff from Matt
+        %p.well.well-sm studentanswer
     .pull-left
       %a.btn.btn-danger(href="#" style="opacity: 0.9;" data-toggle="modal" data-target=".bs-example-modal-sm") Incorrect
     .pull-right
@@ -54,10 +52,10 @@
         %p.problem-text 3x+4=10
       %li.list-group-item.clearfix
         %h5.text-center Solution Steps
-        %p 1. 3x=10-4
-        %p 2. 3x=6
-        %p 3. x=2
+        %p.well.well-sm 1. 3x=10-4
+        %p.well.well-sm 2. 3x=6
+        %p.well.well-sm 3. x=2
       %li.list-group-item.clearfix
         %h5.text-center Answer
-        x=2
+        %p.well.well-sm x=2
   .col-md-2
