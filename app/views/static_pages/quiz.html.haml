@@ -12,7 +12,7 @@
         %a(href= "#") 1
       - 16.times do |index|
         %li{:"data-num" => index + 2}
-          %a.reload(href= "#")= index + 2
+          %a(href= "#")= index + 2
       %li
         %a(href="#") &raquo;
   .col-md-2
@@ -36,7 +36,7 @@
       %li.list-group-item.clearfix
         %h5.text-center Answer
         %form
-          .form-group
+          .form-group#answer
             %br
             %input.form-control{:placeholder => "Solution Answer", :type => "text"}/
 
