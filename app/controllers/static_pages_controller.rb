@@ -41,4 +41,7 @@ class StaticPagesController < ApplicationController
   def parent
   end
 
+  def lesson
+  end
+
 end

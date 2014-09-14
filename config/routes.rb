@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/teacher_dashboard', to: 'static_pages#teacher_dashboard'
   get '/petitions', to: 'static_pages#petitions'
   get '/parent', to: 'static_pages#parent'
+  get '/lesson', to: 'static_pages#lesson'
   devise_for :users
 end

@@ -1,0 +1,146 @@
+
+%form.form-horizontal.col-md-4
+  %fieldset
+    .form-group
+    %select.form-control#subject
+      %option.disabled.selected Subject
+      %option(value="1") Algebra 1
+      %option Algebra 2
+      %option Geometry
+      %option Trigonometry
+    .form-group
+    %select.form-control#lesson
+      %option.disabled.selected Lesson
+      %option(value="1") Lesson 1
+      %option(value="2") Lesson 2
+      %option(value="3") Lesson 3
+      %option(value="4") Lesson 4
+      %option(value="5") Lesson 5
+%br
+%br
+%br
+
+.modal.fade.modal-submit-question(tabindex="-1" role="dialog" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header Submit Problem
+      .modal-body
+        %form{:role => "form"}
+          .form-group
+            %label{:for => "Problem"} Problem
+            %input.form-control{:placeholder => "Enter Problem", :type => "text"}/
+          .form-group#solution-steps
+            %label{:for => "solutionStep"}
+              Solution Steps
+              %a#step{href:"#"} (+)
+            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+          .form-group
+            %label{:for => "solution"} Solution
+            %input.form-control{:type => "text", :placeholder => "Solution Step"}/
+      .modal-footer
+        %button.btn.btn-primary{:type => "submit"} Submit
+
+.modal.fade.modal-review-question(tabindex="-1" role="dialog" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header Submit Problem
+      .modal-body
+        .quiz-problem
+          %ul.list-group
+            %li.list-group-item.clearfix
+              %h5.text-center
+                Problem
+              %p.problem-text 3x+4=10
+            %li.list-group-item.clearfix
+              %h5.text-center Solution Steps
+              %p.well.well-sm 1. 3x=10-4
+              %p.well.well-sm 2. 3x=6
+              %p.well.well-sm 3. x=2
+            %li.list-group-item.clearfix
+              %h5.text-center Answer
+              %p.well.well-sm x=2
+          .panel.panel-default
+            .panel-heading
+              Question Guidelines
+            .panel-body
+              .form-group
+                %i.fa.fa-thumbs-o-up
+                &nbsp
+                %i.fa.fa-thumbs-o-down
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio1")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio1")
+                &nbsp
+                &nbsp
+                Contains between 4-6 terms
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio2")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio2")
+                &nbsp
+                &nbsp
+                Only uses the addition/subtraction operands
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio3")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio3")
+                &nbsp
+                &nbsp
+                Uses integers between 0-20
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio4")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio4")
+                &nbsp
+                &nbsp
+                Uses only one variable
+              .comments.hidden
+                %p.text-center Comments
+                %form(action="/rejected" method="GET")
+                  %textarea.form-control(rows="3" name="comment" placeholder="Enter an explanation" required="required")
+                  .hidden.reject-question(style="margin-top: 5%;")
+                    %input.btn.btn-danger.center-block(type="submit" value="Reject Question")
+      .modal-footer
+        %a.btn.btn-success.hidden.accept-question.center-block(style="margin-top: 5%;" href="#") Approve Question
+
+//#TODO Add Lesson Content
+%br
+%br
+.row
+  #content(style="display:none")
+    = render 'lesson_content'
+%br
+
+
+.row
+%h4 Status
+.btn.btn-default.disabled#submit( data-toggle="modal" data-target=".modal-submit-question") Submit Question
+.btn.btn-default.disabled#review( data-toggle="modal" data-target=".modal-review-question") Review Question
+%a.btn.btn-default.disabled#quiz(href= "/quiz") Take Quiz
+%a.btn.btn-default.disabled#grade(href= '/grade_quiz') Grade Quiz
+%a.btn.btn-default.disabled#grades(href= '/dashboard') Review Grades
+
+
+:javascript
+  $(function() {
+    $('select').change(function() {
+      if ($('#subject').val()=="1") {
+        $('#content').show();
+      };
+    });
+
+    $('select').change(function() {
+      if ($('#lesson').val()=="5") {
+        $('#submit, #review, #quiz, #grade, #grades').addClass('disabled');
+      } else if ($('#lesson').val()=="3") {
+        $('#submit').removeClass('disabled');
+      } else if ($('#lesson').val()=="2") {
+        $('#submit').addClass('disabled');
+        $('#review').removeClass('disabled');
+      } else if ($('#lesson').val()=="1") {
+        $('#grades').removeClass('disabled');
+        $('#submit, #review').addClass('disabled');
+      };
+    });
+  });
