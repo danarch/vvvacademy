@@ -4,23 +4,49 @@
     %small Student Dashboard
 
 %row
-  .col-md-4
-    %h5 Student Subjects
-    %select.form-control#subject
-      %option Select Subject
-      %option Political Systems
-      %option American History
-      %option Physics
-      %option{value: "1"} Algebra 1
-%br
-%br
-%br
-%br
-%br
-%br
-#show-this-stuff{:style => "display: none;"}
-  .row
-    .col-md-8
+  .col-md-12
+    .col-md-4
+      %h5 Subjects
+      %select.form-control#subject
+        %option Select Subject
+        %option Political Systems
+        %option American History
+        %option Physics
+        %option{value: "1"} Algebra 1
+      %br
+      .form-group
+        %select.form-control#lesson
+          %option Select Lesson
+          %option Lesson 1
+          %option Lesson 2
+          %option Lesson 3
+          %option Lesson 4
+          %option{value: "1"} Lesson 5
+
+
+%div#show-this-stuff{:style => "display: none;"}
+  %row
+    .col-md-12
+      .col-md-6
+        %h3 Quiz Questions
+        %br
+        %form.form-horizantal.col-md-6
+          %fieldset
+            .form-group
+              %select.form-control#subject
+                %option Top 3
+                %option Top 5
+                %option Top 10
+                %option Top 25
+        %br
+        %br
+        =render 'static_pages/questions'
+        %br
+        %br
+
+
+  %row
+    .col-md-6
       #chart{:style => "width: 50%; height: 400px"}
 
 
@@ -28,7 +54,7 @@
 
   $(document).ready(function() {
     $('select').change(function() {
-      if ($('#subject').val()=="1") {
+      if ($('#subject').val()=="1" && $('#lesson').val()=="1") {
         $('#show-this-stuff').show();
       }
     })
