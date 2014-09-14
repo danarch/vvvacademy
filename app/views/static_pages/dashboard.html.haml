@@ -1,27 +1,50 @@
 
 %h2 Algebra
 
-%table.table-hover
+.modal.fade.modal-submit-question(tabindex="-1" role="dialog" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header Submit Problem
+      .modal-body
+        %form{:role => "form"}
+          .form-group
+            %label{:for => "Problem"} Problem
+            %input.form-control{:placeholder => "Enter Problem", :type => "text"}/
+          .form-group#solution-steps
+            %label{:for => "solutionStep"}
+              Solution Steps
+              %a#step{href:"#"} (+)
+            %input.form-control{:placeholder => "Solution Step", :type => "text"}/
+          .form-group
+            %label{:for => "solution"} Solution
+            %input.form-control{:type => "text", :placeholder => "Solution Step"}/
+      .modal-footer
+        %button.btn.btn-primary{:type => "submit"} Submit
+
+
+
+
+%table.col-md-12.table-hover
   %thead
     %tr
-      %th.col-md-8
+      %th( width="75%")
         %h4 Lesson
-      %th.col-md-4
+      %th( width="25%")
         %h4 Progress
   %tbody
     %tr
-      %td.col-md-8 Solving for one variable using addition
-      %td.col-md-4
+      %td(width="75%") Solving for one variable using addition
+      %td(width="25%")
         .btn.btn-default Review Grades
     %tr
-      %td.col-md-8 Solving for one variable using subtraction
-      %td.col-md-4
-        .btn.btn-default Submit Question
+      %td(width="75%") Solving for one variable using subtraction
+      %td(width="25%")
+        .btn.btn-default(href="#" style="opacity: 0.9;" data-toggle="modal" data-target=".modal-submit-question") Submit Question
     %tr
-      %td.col-md-8.text-muted Solving for one variable using multiplication
-      %td.col-md-4
+      %td.text-muted(width="75%") Solving for one variable using multiplication
+      %td(width="25%")
         .btn.btn-default.disabled Not Available
     %tr
-      %td.col-md-8.text-muted Solving for one variable using multiplication
-      %td.col-md-4
+      %td.text-muted(width="75%") Solving for one variable using multiplication
+      %td(width="25%")
         .btn.btn-default.disabled Not Available
