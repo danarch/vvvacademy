@@ -1,4 +1,11 @@
 $(function () {
+    numPanelFaded = 0;
+    $('.btnFade').click(function(){
+        $(this).closest('.panel').fadeOut();
+        numPanelFaded++;
+    });
+
+    // highchart code
     $('#grade_graph').highcharts({
         chart: {
             type: 'column'
@@ -46,4 +53,6 @@ $(function () {
 
         }]
     });
+    
+
 });
