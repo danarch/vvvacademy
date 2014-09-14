@@ -1,5 +1,22 @@
 
-%h2 Algebra
+%form.form-horizontal.col-md-4
+  %fieldset
+    .form-group
+    %select.form-control#subject
+      %option.disabled.selected Subject
+      %option(value="1") Algebra 1
+      %option Algebra 2
+      %option Geometry
+      %option Trigonometry
+    .form-group
+    %select.form-control#select
+      %option.disabled.selected Lesson
+      %option(value="1") 1
+      %option 2
+      %option 3
+      %option 4
+      %option 5
+%br
 
 .modal.fade.modal-submit-question(tabindex="-1" role="dialog" aria-hidden="true")
   .modal-dialog
@@ -21,30 +38,77 @@
       .modal-footer
         %button.btn.btn-primary{:type => "submit"} Submit
 
+.modal.fade.modal-review-question(tabindex="-1" role="dialog" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header Submit Problem
+      .modal-body
+        .quiz-problem
+          %ul.list-group
+            %li.list-group-item.clearfix
+              %h5.text-center
+                Problem
+              %p.problem-text 3x+4=10
+            %li.list-group-item.clearfix
+              %h5.text-center Solution Steps
+              %p.well.well-sm 1. 3x=10-4
+              %p.well.well-sm 2. 3x=6
+              %p.well.well-sm 3. x=2
+            %li.list-group-item.clearfix
+              %h5.text-center Answer
+              %p.well.well-sm x=2
+          .panel.panel-default
+            .panel-heading
+              Question Guidelines
+            .panel-body
+              .form-group
+                %i.fa.fa-thumbs-o-up
+                &nbsp
+                %i.fa.fa-thumbs-o-down
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio1")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio1")
+                &nbsp
+                &nbsp
+                Contains between 4-6 terms
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio2")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio2")
+                &nbsp
+                &nbsp
+                Only uses the addition/subtraction operands
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio3")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio3")
+                &nbsp
+                &nbsp
+                Uses integers between 0-20
+              %p.checkboxes
+                %input.thumbs-up(type="radio" name="radio4")
+                &nbsp
+                %input.thumbs-down(type="radio" name="radio4")
+                &nbsp
+                &nbsp
+                Uses only one variable
+              .comments.hidden
+                %p.text-center Comments
+                %form(action="/rejected" method="GET")
+                  %textarea.form-control(rows="3" name="comment" placeholder="Enter an explanation" required="required")
+                  .hidden.reject-question(style="margin-top: 5%;")
+                    %input.btn.btn-danger.center-block(type="submit" value="Reject Question")
+      .modal-footer
+        %a.btn.btn-success.hidden.accept-question.center-block(style="margin-top: 5%;" href="#") Approve Question
+
+//#TODO Add Lesson Content
 
 
-
-%table.col-md-12.table-hover
-  %thead
-    %tr
-      %th( width="75%")
-        %h4 Lesson
-      %th( width="25%")
-        %h4 Progress
-  %tbody
-    %tr
-      %td(width="75%") Solving for one variable using addition
-      %td(width="25%")
-        .btn.btn-default Review Grades
-    %tr
-      %td(width="75%") Solving for one variable using subtraction
-      %td(width="25%")
-        .btn.btn-default(href="#" style="opacity: 0.9;" data-toggle="modal" data-target=".modal-submit-question") Submit Question
-    %tr
-      %td.text-muted(width="75%") Solving for one variable using multiplication
-      %td(width="25%")
-        .btn.btn-default.disabled Not Available
-    %tr
-      %td.text-muted(width="75%") Solving for one variable using multiplication
-      %td(width="25%")
-        .btn.btn-default.disabled Not Available
+.row
+%h4 Status
+.btn.btn-primary(href="#" data-toggle="modal" data-target=".modal-submit-question") Submit Question
+.btn.btn-primary(href="#" data-toggle="modal" data-target=".modal-review-question") Review Question
+%a.btn.btn-default(href= "/quiz") Take Quiz
+.btn.btn-default.disabled Grade Quiz
+.btn.btn-default.disabled Review Grades
