@@ -59,10 +59,16 @@
 
 <br/>
 
+<!-- handle petitions -->
+<a class="btn btn-info btn-lg" href="/petitions" style="margin-bottom:75px">
+  Handel Petitions
+</a>
+
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createTest">
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createTest" style="margin-bottom:75px">
   Create New Test
 </button>
+
 
 </div>
 
@@ -156,7 +162,7 @@ $(function () {
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                '<td style="padding:0"><b>{point.y:.1f} pts</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
